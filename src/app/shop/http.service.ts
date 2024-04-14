@@ -5,7 +5,7 @@ import { Injectable } from "@angular/core";
   providedIn: 'any',
 })
 export class useHttp {
-  private BaseUrl: string = 'https://fakestoreapi.com/';
+  private BaseUrl = 'https://fakestoreapi.com/';
 
   constructor(private http: HttpClient) {}
 

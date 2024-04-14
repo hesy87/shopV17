@@ -11,3 +11,4 @@ export interface IProducts {
   description: string;
   image: string;
 }
+

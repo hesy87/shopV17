@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from '../shared/UIElemnts/header/header.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { useHttp } from './http.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-shop',
@@ -9,6 +9,7 @@ import { useHttp } from './http.service';
   imports: [HeaderComponent, LandingPageComponent],
   templateUrl: './shop.component.html',
   styleUrl: './shop.component.css',
+  providers:[HttpClientModule]
 })
 export class ShopComponent {
 

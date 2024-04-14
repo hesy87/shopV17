@@ -1,3 +1,5 @@
 <div class="container mx-auto grid grid-cols-3 gap-2">
-    <app-card></app-card>
+    <div *ngFor="let item of products">
+        <app-card  [items]="item"></app-card>
+    </div>
 </div>

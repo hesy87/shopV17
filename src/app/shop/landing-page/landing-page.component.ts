@@ -3,14 +3,15 @@ import { HeaderComponent } from '../../shared/UIElemnts/header/header.component'
 import { CardComponent } from '../../shared/UIElemnts/card/card.component';
 import { IProducts } from '../order.model';
 import { useHttp } from '../http.service';
+import { NgFor, NgForOf } from '@angular/common';
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [HeaderComponent, CardComponent],
+  imports: [HeaderComponent, CardComponent,NgFor],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.css',
-  providers:[useHttp]
+  providers: [useHttp],
 })
 export class LandingPageComponent implements OnInit {
   products: IProducts[] = [];
@@ -18,7 +19,7 @@ export class LandingPageComponent implements OnInit {
 
   constructor(private http: useHttp) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.fetchData();
   }
 
