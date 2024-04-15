@@ -3,9 +3,10 @@ import { ShopComponent } from './shop/shop.component';
 import { BigCardComponent } from './shared/UIElemnts/big-card/big-card.component';
 import { CartComponent } from './shop/cart/cart.component';
 import { TableComponent } from './shared/UIElemnts/table/table.component';
+import { LandingPageComponent } from './shop/landing-page/landing-page.component';
 
 export const routes: Routes = [
-    {path:'' , component:ShopComponent},
+    {path:'' , component:LandingPageComponent},
     {path:'cart' , component:CartComponent},
     {path:':category' , component:ShopComponent},
     {path:'products/:id' , component:BigCardComponent},

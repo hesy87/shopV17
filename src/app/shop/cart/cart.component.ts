@@ -14,10 +14,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './cart.component.css',
 })
 export class CartComponent {
-  private store = inject(Store);
   order$?: Observable<IOrder[]>;
 
   constructor() {
-    this.order$ = this.store.select('order');
+   
   }
 }

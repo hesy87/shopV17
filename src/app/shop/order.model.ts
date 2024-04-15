@@ -1,6 +1,10 @@
 export interface IOrder {
-    title: string,
-    quantity: number
+  id: number;
+  title: string;
+  price: string;
+  category: string;
+  image: string;
+  quantity: number;
 }
 
 export interface IProducts {

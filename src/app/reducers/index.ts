@@ -1,20 +1,11 @@
-import { isDevMode } from '@angular/core';
-import {
-  ActionReducer,
-  ActionReducerMap,
-  createFeatureSelector,
-  createSelector,
-  MetaReducer
-} from '@ngrx/store';
-import { orderReducer } from './order.reducer';
+import { CounterListState } from './state/order.reducer';
 
-export interface State {
-
+export interface AppState {
+  counterList: CounterListState;
 }
 
-export const reducers: ActionReducerMap<State> = {
-  order: orderReducer,
-};
 
-
-export const metaReducers: MetaReducer<State>[] = isDevMode() ? [] : [];
+export interface Item {
+  userName: string;
+  userId: number;
+}
