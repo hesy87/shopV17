@@ -1,5 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
-import { addItemToBasket } from "./action.type";
+import { addItemToBasket } from "./order.action";
 import { IOrder } from "../shop/order.model";
 
 export const initialState: { items: IOrder[] } = {

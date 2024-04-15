@@ -5,11 +5,12 @@ import { IProducts } from '../order.model';
 import { useHttp } from '../http.service';
 import { NgFor } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { CartComponent } from '../cart/cart.component';
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [HeaderComponent, CardComponent, NgFor],
+  imports: [HeaderComponent, CardComponent, NgFor,CartComponent],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.css',
   providers: [useHttp],

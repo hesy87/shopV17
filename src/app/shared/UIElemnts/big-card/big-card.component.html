@@ -1,0 +1,12 @@
+<app-header></app-header>
+<div class="card lg:card-side bg-base-100 shadow-xl mt-3 container mx-auto">
+  <figure><img src={{product.image}} alt="Album"/></figure>
+  <div class="card-body">
+    <h2 class="card-title">{{product.title}}</h2>
+    <p>{{product.description}}</p>
+    <div class="card-actions justify-end">
+      <div class="badge badge-accent">{{product.price}} $</div>
+      <button class="btn btn-primary">Add to Basket</button>
+    </div>
+  </div>
+</div>
