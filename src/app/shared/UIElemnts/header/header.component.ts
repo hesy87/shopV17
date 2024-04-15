@@ -1,12 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { useHttp } from '../../../shop/http.service';
+import { NgFor } from '@angular/common';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [NgFor,RouterLink],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrl: './header.component.css',
+  providers: [useHttp],
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
+  category = [];
+  url = 'products/categories';
 
+  constructor(private http: useHttp,private router:Router) {}
+
+  ngOnInit() {
+    this.fetchData();
+  }
+
+  fetchData() {
+    this.http.getData(this.url).subscribe((res: any) => (this.category = res));
+  }
+
+  navigate(category:string) {
+    this.router.navigate([`/${category}`])
+  }
 }
