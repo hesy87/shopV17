@@ -3,7 +3,12 @@ import { addItemToBasket } from "./order.action";
 import { IOrder } from "../shop/order.model";
 
 export const initialState: { items: IOrder[] } = {
-  items: [],
+  items: [
+    {
+      title: 'hesam',
+      quantity: 2,
+    },
+  ],
 };
 
 export const orderReducer = createReducer(
