@@ -9,28 +9,27 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
+      <tr *ngFor="let item of orderList">
         <td>
           <div class="flex items-center gap-3">
             <div class="avatar">
               <div class="mask mask-squircle w-12 h-12">
-                <img src="/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
+                <img src={{item.image}} alt="Avatar Tailwind CSS Component" />
               </div>
             </div>
             <div>
-              <div class="font-bold">Hart Hagerty</div>
-              <div class="text-sm opacity-50">United States</div>
+              <div class="font-bold">{{item.title}}</div>
             </div>
           </div>
         </td>
         <td>
-          Zemlak, Daniel and Leannon
+          {{item.quantity}}
           <br/>
-          <span class="badge badge-ghost badge-sm">Desktop Support Technician</span>
+          <span class="badge badge-ghost badge-sm">{{item.category}}</span>
         </td>
-        <td>Purple</td>
+        <td>{{item.price}}</td>
         <th>
-          <button class="btn btn-ghost btn-xs">details</button>
+          <button class="btn btn-error btn-xs">Remove</button>
         </th>
       </tr>
     </tbody>  

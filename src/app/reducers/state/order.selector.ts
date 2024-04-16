@@ -2,9 +2,9 @@ import { createSelector } from '@ngrx/store';
 import { AppState } from '../index';
 
 
-export const selectCounterState = (state: AppState) => state.counterList;
+export const selectOrderState = (state: AppState) => state.OrderList;
 
-export const selectCountList = createSelector(
-  selectCounterState,
+export const selectOrderList = createSelector(
+  selectOrderState,
   (state) => state.list
 );

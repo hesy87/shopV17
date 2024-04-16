@@ -1,26 +1,31 @@
 import { createReducer, on } from '@ngrx/store';
 import { addItem, removeItem, resetItem } from './order.action';
-import { Item } from '../index';
+import { IOrder } from '../index';
 
-export const initialState = 0;
+export const initialState = [];
 
-export interface CounterListState {
-  list: Array<Item>;
+export interface OrderListState {
+  list: Array<IOrder>;
 }
-export const initialCounterState: CounterListState = {
-  list: [{ userName: 'Ravi', userId: 1 } as Item],
+
+export const initialOrderState: OrderListState = {
+  list: [],
 };
 
-export const counterListReducer = createReducer(
-  initialCounterState,
+export const OrderListReducer = createReducer(
+  initialOrderState,
 
-  on(addItem, (state, { item }) => {
-    const list = [...state.list, item];
+  on(addItem, (state, { product }) => {
+    const orderProduct: IOrder = {
+      ...product,
+      quantity: 1,
+    };
+    const list = [...state.list, orderProduct];
     return { ...state, list };
   }),
 
-  on(removeItem, (state, { userId }) => {
-    const list = state.list.filter((item) => item.userId !== userId);
+  on(removeItem, (state, { productID }) => {
+    const list = state.list.filter((item) => item.id !== productID);
     return { ...state, list };
   }),
 

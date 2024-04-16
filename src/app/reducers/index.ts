@@ -1,11 +1,10 @@
-import { CounterListState } from './state/order.reducer';
+import { IProducts } from '../shop/order.model';
+import {  OrderListState } from './state/order.reducer';
 
 export interface AppState {
-  counterList: CounterListState;
+  OrderList: OrderListState;
 }
 
-
-export interface Item {
-  userName: string;
-  userId: number;
+export interface IOrder extends IProducts {
+  quantity: number;
 }

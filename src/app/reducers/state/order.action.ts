@@ -1,12 +1,12 @@
 import { createAction, props } from '@ngrx/store';
-import { Item } from '../index';
+import { IProducts } from '../../shop/order.model';
 
 export const addItem = createAction(
   '[CounterList Component] AddItem',
-  props<{ item: Item }>()
+  props<{ product: IProducts }>()
 );
 export const removeItem = createAction(
   '[CounterList Component] RemoveItem',
-  props<{ userId: number }>()
+  props<{ productID: number }>()
 );
 export const resetItem = createAction('[CounterList Component] ResetItem');

@@ -1,10 +1,11 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { TableComponent } from '../../shared/UIElemnts/table/table.component';
 import { HeaderComponent } from '../../shared/UIElemnts/header/header.component';
-import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { IOrder } from '../order.model';
 import { CommonModule } from '@angular/common';
+import { Store } from '@ngrx/store';
+import { AppState } from '../../reducers';
+import { selectOrderList } from '../../reducers/state/order.selector';
 
 @Component({
   selector: 'app-cart',
@@ -14,9 +15,19 @@ import { CommonModule } from '@angular/common';
   styleUrl: './cart.component.css',
 })
 export class CartComponent {
-  order$?: Observable<IOrder[]>;
+  selectOrderList$: Observable<any>;
 
-  constructor() {
-   
+  constructor(private store: Store<AppState>) {
+    this.selectOrderList$ = this.store.select(selectOrderList);
   }
+
+
+  // removeItem(userId: number) {
+  //   this.list.pop();
+  //   this.store.dispatch(removeItem({ userId }));
+  // }
+  // resetItem() {
+  //   this.list = [];
+  //   this.store.dispatch(resetItem());
+  // }
 }

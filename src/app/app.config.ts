@@ -5,14 +5,14 @@ import { routes } from './app.routes';
 import { provideState, provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { provideHttpClient } from '@angular/common/http';
-import { counterListReducer } from './reducers/state/order.reducer';
+import { OrderListReducer } from './reducers/state/order.reducer';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideHttpClient(),
     provideRouter(routes),
     provideStore(),
-    provideState({ name: 'counterList', reducer: counterListReducer }),
+    provideState({ name: 'OrderList', reducer: OrderListReducer }),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
   ],
 };
