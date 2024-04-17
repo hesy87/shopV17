@@ -6,5 +6,5 @@ export interface AppState {
 }
 
 export interface IOrder extends IProducts {
-  quantity: number;
+  quantity: number ;
 }

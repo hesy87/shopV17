@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { useHttp } from '../../../shop/http.service';
 import { IProducts } from '../../../shop/order.model';
 import { HeaderComponent } from '../header/header.component';
-import { AppState, IOrder } from '../../../reducers';
+import { AppState } from '../../../reducers';
 import { Store } from '@ngrx/store';
 import { addItem } from '../../../reducers/state/order.action';
 

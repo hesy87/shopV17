@@ -9,4 +9,11 @@ export const removeItem = createAction(
   '[CounterList Component] RemoveItem',
   props<{ productID: number }>()
 );
-export const resetItem = createAction('[CounterList Component] ResetItem');
+export const increaseQuantity = createAction(
+  '[CounterList Component] increaseQuantity',
+  props<{ productID: number }>()
+);
+export const dicreaseQuantity = createAction(
+  '[CounterList Component] dicreaseQuantity',
+  props<{ productID: number }>()
+);

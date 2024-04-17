@@ -6,10 +6,6 @@ import { useHttp } from '../http.service';
 import { AsyncPipe, NgFor } from '@angular/common';
 import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { CartComponent } from '../cart/cart.component';
-import { Store } from '@ngrx/store';
-import { AppState } from '../../reducers';
-import { Observable } from 'rxjs';
-import { addItem, removeItem, resetItem } from '../../reducers/state/order.action';
 
 @Component({
   selector: 'app-landing-page',

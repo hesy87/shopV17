@@ -2,10 +2,11 @@
   <table class="table">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Job</th>
-        <th>Favorite Color</th>
         <th></th>
+        <th>Title</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -17,19 +18,25 @@
                 <img src={{item.image}} alt="Avatar Tailwind CSS Component" />
               </div>
             </div>
-            <div>
-              <div class="font-bold">{{item.title}}</div>
-            </div>
           </div>
         </td>
         <td>
-          {{item.quantity}}
+          {{item.title}}
           <br/>
           <span class="badge badge-ghost badge-sm">{{item.category}}</span>
         </td>
-        <td>{{item.price}}</td>
+        <td>
+          <button (click)="increaseQuantity(item.id)" class="btn btn-circle">
+            +
+          </button>
+          {{item.quantity}}
+          <button (click)="dicreaseQuantity(item.id)" class="btn btn-circle">
+            -
+          </button>
+        </td>
+        <td>{{item.price}} $</td>
         <th>
-          <button class="btn btn-error btn-xs">Remove</button>
+          <button class="btn btn-error btn-xs" (click)="removeItem(item.id)">Remove</button>
         </th>
       </tr>
     </tbody>  

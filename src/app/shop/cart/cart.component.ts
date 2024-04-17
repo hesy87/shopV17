@@ -20,14 +20,4 @@ export class CartComponent {
   constructor(private store: Store<AppState>) {
     this.selectOrderList$ = this.store.select(selectOrderList);
   }
-
-
-  // removeItem(userId: number) {
-  //   this.list.pop();
-  //   this.store.dispatch(removeItem({ userId }));
-  // }
-  // resetItem() {
-  //   this.list = [];
-  //   this.store.dispatch(resetItem());
-  // }
 }
