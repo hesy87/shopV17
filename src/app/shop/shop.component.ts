@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { HeaderComponent } from '../shared/UIElemnts/header/header.component';
-import { LandingPageComponent } from './landing-page/landing-page.component';
-import { HttpClientModule } from '@angular/common/http';
+import  LandingPageComponent  from './landing-page/landing-page.component';
 
 @Component({
   selector: 'app-shop',
@@ -9,8 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [HeaderComponent, LandingPageComponent],
   templateUrl: './shop.component.html',
   styleUrl: './shop.component.css',
-  providers:[HttpClientModule]
 })
-export class ShopComponent {
+export default class ShopComponent {
   @Input() category!:string 
 }

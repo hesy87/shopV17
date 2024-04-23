@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { IProducts } from '../../shop/order.model';
+import { IProducts } from '../../core/modules/order.model';
 
 export const addItem = createAction(
   '[CounterList Component] AddItem',

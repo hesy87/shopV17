@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IProducts } from '../../../shop/order.model';
+import { IProducts } from '../../../core/modules/order.model';
 import { Router } from '@angular/router';
 
 @Component({
@@ -17,6 +17,6 @@ export class CardComponent implements OnInit {
   ngOnInit() {}
 
   navigate(productId: any) {
-    this.route.navigate([`products/${productId.id}`])
+    this.route.navigate([`products/${productId.id}`]);
   }
 }

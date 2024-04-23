@@ -2,7 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 
 @Injectable({
-  providedIn: 'any', //todo : root
+  providedIn: 'root', 
 })
 export class useHttp {
   private BaseUrl = 'https://fakestoreapi.com/';

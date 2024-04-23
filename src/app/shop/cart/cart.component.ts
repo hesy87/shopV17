@@ -14,7 +14,7 @@ import { selectOrderList } from '../../reducers/state/order.selector';
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css',
 })
-export class CartComponent {
+export default class CartComponent {
   selectOrderList$: Observable<any>;
 
   constructor(private store: Store<AppState>) {

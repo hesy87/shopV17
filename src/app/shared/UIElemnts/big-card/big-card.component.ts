@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { useHttp } from '../../../shop/http.service';
-import { IProducts } from '../../../shop/order.model';
+import { useHttp } from '../../../core/services/http.service';
+import { IProducts } from '../../../core/modules/order.model';
 import { HeaderComponent } from '../header/header.component';
 import { AppState } from '../../../reducers';
 import { Store } from '@ngrx/store';
@@ -15,7 +15,7 @@ import { addItem } from '../../../reducers/state/order.action';
   styleUrl: './big-card.component.css',
   providers: [useHttp],
 })
-export class BigCardComponent implements OnInit {
+export default class BigCardComponent implements OnInit {
   url = 'products/';
   id = '';
   product!: IProducts;
@@ -36,7 +36,7 @@ export class BigCardComponent implements OnInit {
       .subscribe((res: any) => (this.product = res));
   }
 
-  addItem(product:any) {
+  addItem(product: any) {
     this.store.dispatch(addItem({ product }));
   }
 }

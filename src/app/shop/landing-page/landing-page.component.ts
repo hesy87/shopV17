@@ -1,11 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { HeaderComponent } from '../../shared/UIElemnts/header/header.component';
 import { CardComponent } from '../../shared/UIElemnts/card/card.component';
-import { IProducts } from '../order.model';
-import { useHttp } from '../http.service';
+import { IProducts } from '../../core/modules/order.model';
+import { useHttp } from '../../core/services/http.service';
 import { AsyncPipe, NgFor } from '@angular/common';
 import { ActivatedRoute, RouterOutlet } from '@angular/router';
-import { CartComponent } from '../cart/cart.component';
 
 @Component({
   selector: 'app-landing-page',
@@ -14,27 +13,24 @@ import { CartComponent } from '../cart/cart.component';
     HeaderComponent,
     CardComponent,
     NgFor,
-    CartComponent,
     RouterOutlet,
     AsyncPipe,
   ],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.css',
-  providers: [useHttp],
 })
-export class LandingPageComponent {
+export default class LandingPageComponent {
   products: IProducts[] = [];
   getAllProductUrl = 'products';
   getProductsCategory = 'products/category/';
   url = '';
   @Input() set hesamCategory(value: any) {
-    this.fetchData(value)
+    this.fetchData(value);
   }
-  
-  constructor(private http: useHttp, private route: ActivatedRoute) {}
 
+  constructor(private http: useHttp) {}
 
-  fetchData(value:any) {
+  fetchData(value: any) {
     if (value === undefined) {
       this.http
         .getData(this.getAllProductUrl)
@@ -45,5 +41,4 @@ export class LandingPageComponent {
         .subscribe((res: any) => (this.products = res));
     }
   }
-
 }
