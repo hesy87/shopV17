@@ -28,7 +28,8 @@ export class TableComponent implements OnInit {
   removeItem(productID: number) {
     this.store.dispatch(removeItem({ productID }));
   }
-
+  
+  //todo : minus is possivle fix it
   dicreaseQuantity(productID: number) {
     this.store.dispatch(dicreaseQuantity({ productID }));
   }

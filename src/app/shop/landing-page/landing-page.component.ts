@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { HeaderComponent } from '../../shared/UIElemnts/header/header.component';
 import { CardComponent } from '../../shared/UIElemnts/card/card.component';
 import { IProducts } from '../order.model';
@@ -22,30 +22,26 @@ import { CartComponent } from '../cart/cart.component';
   styleUrl: './landing-page.component.css',
   providers: [useHttp],
 })
-export class LandingPageComponent implements OnInit {
+export class LandingPageComponent {
   products: IProducts[] = [];
   getAllProductUrl = 'products';
   getProductsCategory = 'products/category/';
   url = '';
-
+  @Input() set hesamCategory(value: any) {
+    this.fetchData(value)
+  }
+  
   constructor(private http: useHttp, private route: ActivatedRoute) {}
 
-  ngOnInit() {
-    this.route.params.subscribe(
-      (param: any) => {
-        this.url = param.category;
-        this.fetchData()
-      })
-  }
 
-  fetchData() {
-    if (this.url === undefined) {
+  fetchData(value:any) {
+    if (value === undefined) {
       this.http
         .getData(this.getAllProductUrl)
         .subscribe((res: any) => (this.products = res));
     } else {
       this.http
-        .getData(this.getProductsCategory + this.url)
+        .getData(this.getProductsCategory + value)
         .subscribe((res: any) => (this.products = res));
     }
   }

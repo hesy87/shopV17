@@ -6,6 +6,11 @@ import { CartComponent } from './shop/cart/cart.component';
 export const routes: Routes = [
     {path:'' , component:ShopComponent},
     {path:'cart' , component:CartComponent},
-    {path:':category' , component:ShopComponent},
+    // {path:':category' , component:ShopComponent},
+    {
+        path:':category' ,
+        loadComponent: async()=> (await import('./shop/shop.component')).ShopComponent
+        
+    },
     {path:'products/:id' , component:BigCardComponent},
 ];

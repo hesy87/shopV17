@@ -8,3 +8,4 @@ export interface IProducts {
   image: string;
 }
 
+// todo app --> core --> model

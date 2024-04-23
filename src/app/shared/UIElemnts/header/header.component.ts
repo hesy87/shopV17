@@ -11,6 +11,8 @@ import { Router, RouterLink } from '@angular/router';
   styleUrl: './header.component.css',
   providers: [useHttp],
 })
+  
+  //todo : dump component
 export class HeaderComponent implements OnInit {
   category = [];
   url = 'products/categories';
@@ -20,7 +22,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.fetchData();
   }
-
+  
+  //todo : service seprate 
   fetchData() {
     this.http.getData(this.url).subscribe((res: any) => (this.category = res));
   }

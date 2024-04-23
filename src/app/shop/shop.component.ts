@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { HeaderComponent } from '../shared/UIElemnts/header/header.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -12,5 +12,5 @@ import { HttpClientModule } from '@angular/common/http';
   providers:[HttpClientModule]
 })
 export class ShopComponent {
-
+  @Input() category!:string 
 }

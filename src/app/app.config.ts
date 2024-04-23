@@ -1,5 +1,5 @@
 import { ApplicationConfig, isDevMode } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withComponentInputBinding } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideState, provideStore } from '@ngrx/store';
@@ -10,7 +10,7 @@ import { OrderListReducer } from './reducers/state/order.reducer';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideHttpClient(),
-    provideRouter(routes),
+    provideRouter(routes,withComponentInputBinding()),
     provideStore(),
     provideState({ name: 'OrderList', reducer: OrderListReducer }),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
