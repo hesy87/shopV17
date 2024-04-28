@@ -1,6 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IProducts } from '../../../core/modules/order.model';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card',
@@ -9,14 +8,14 @@ import { Router } from '@angular/router';
   templateUrl: './card.component.html',
   styleUrl: './card.component.css',
 })
-export class CardComponent implements OnInit {
+export class CardComponent {
   @Input() items!: IProducts;
+  @Output() product = new EventEmitter<number>()
 
-  constructor(private route: Router) {}
-
-  ngOnInit() {}
+  constructor() {}
 
   navigate(productId: any) {
-    this.route.navigate([`products/${productId.id}`]);
+    this.product.emit(productId)
   }
 }
+

@@ -10,5 +10,5 @@ import  LandingPageComponent  from './landing-page/landing-page.component';
   styleUrl: './shop.component.css',
 })
 export default class ShopComponent {
-  @Input() category!:string 
+  @Input() category!: string;
 }
